@@ -9,7 +9,6 @@ def quit(*args):
     root.destroy()
 
 def clock_time():
-    '''Get the time remaining until the event'''
     time = datetime.datetime.now()
     
     # strftime function is used to format the time based on the arguments by user
@@ -35,8 +34,11 @@ txt = StringVar()
 
 # Properties of the clock
 lbl = ttk.Label(root, textvariable=txt, font=fnt, foreground='yellow', background='black')
-lbl.place(relx=0.5, rely=0.5, anchor=CENTER) # used to anchor the widget to the center 
-# relx and rely are geometric functions used in tkinter to give a position that is relative to the window
+
+# anchor parameter is used to anchor the widget to the center 
+lbl.place(relx=0.5, rely=0.5, anchor=CENTER) 
+# relx and rely are geometric functions used in tkinter to give a position 
+# that is relative to the window
 
 
 # this will keep the window and program (clock) running until the window is closed

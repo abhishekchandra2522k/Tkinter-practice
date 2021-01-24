@@ -20,7 +20,7 @@ class Application(Frame):
         """Create all buttons for calculator"""
 
         # user input stored as an entry widget
-        self.user_input = Entry(self, bg = "#5BC8AC", bd = 29, insertwidth = 4, width = 24, 
+        self.user_input = Entry(self, bg = "#5BC8AC", bd = 20, insertwidth = 5, width = 22, 
                           font = ("Verdana", 20 ,"bold"), textvariable=self.UserIn, justify=RIGHT)
         
         self.user_input.grid(columnspan = 4)
@@ -77,40 +77,40 @@ class Application(Frame):
                        font= ('Helvetica', 20, "bold"), command = lambda:self.buttonClick(0))
         self.button0.grid(row=5, column=0, sticky= W)
 
-        # Button for Value + Addition
-        self.addButton = Button(self, bg = "#98DBC6", bd = 12, text="+", padx=33, pady=25, 
-                       font= ('Helvetica', 20, "bold"), command = lambda:self.buttonClick("+"))
-        self.addButton.grid(row=2, column=3, sticky= W)
-
         # Button for Value - Subtraction
-        self.subButton = Button(self, bg = "#98DBC6", bd = 12, text="-", padx=33, pady=25, 
+        self.subButton = Button(self, bg = "#0277bd", bd = 12, text="-", padx=33, pady=25, 
                        font= ('Helvetica', 20, "bold"), command = lambda:self.buttonClick("-"))
         self.subButton.grid(row=3, column=3, sticky= W)
 
         # Button for Value * Multiplication
-        self.mulButton = Button(self, bg = "#98DBC6", bd = 12, text="*", padx=33, pady=25, 
+        self.mulButton = Button(self, bg = "#0277bd", bd = 12, text="*", padx=33, pady=25, 
                        font= ('Helvetica', 20, "bold"), command = lambda:self.buttonClick("*"))
-        self.mulButton.grid(row=4, column=3, sticky= W)
+        self.mulButton.grid(row=2, column=3, sticky= W)
+
+         # Button for Value + Addition
+        self.addButton = Button(self, bg = "#0277bd", bd = 11, text="+", padx=33, pady=25, 
+                       font= ('Helvetica', 20, "bold"), command = lambda:self.buttonClick("+"))
+        self.addButton.grid(row=4, column=3, sticky= W)
 
         # Button for Value / Division
-        self.divButton = Button(self, bg = "#98DBC6", bd = 12, text="/", padx=33, pady=25, 
+        self.divButton = Button(self, bg = "#0277bd", bd = 12, text="/", padx=33, pady=25, 
                        font= ('Helvetica', 20, "bold"), command = lambda:self.buttonClick("/"))
         self.divButton.grid(row=5, column=3, sticky= W)
 
         # Button for Value = Evaluate
-        self.equalButton = Button(self, bg = "#98DBC6", bd = 12, text="=", padx=33, pady=25, 
+        self.equalButton = Button(self, bg = "#f7e686", bd = 12, text="=", padx=33, pady=25, 
                        font= ('Helvetica', 20, "bold"), command = self.calculateTask)
-        self.equalButton.grid(row=5, column=1, sticky= W, columnspan=2)
+        self.equalButton.grid(row=5, column=2, sticky= W, columnspan=2)
 
         # Button for Value All Clear
-        self.clearButton = Button(self, bg = "#98DBC6", bd = 12, text="AC", padx=33, pady=25, 
-                       font= ('Helvetica', 18, "bold"), command = self.clearDisplay)
-        self.clearButton.grid(row=1, column=3, sticky= W)
+        self.clearButton = Button(self, bg = "#0277bd", bd = 12, text="AC", padx=33, pady=25, 
+                       font= ('Helvetica', 18, "bold"), width=27, command = self.clearDisplay)
+        self.clearButton.grid(row=1, column=0, sticky= W, columnspan=4)
 
         # Button for Decimal
-        self.deciButton = Button(self, bg = "#009", bd = 12, text=".", padx=33, pady=25,
+        self.deciButton = Button(self, bg = "#0277bd", bd = 12, text=".", padx=33, pady=25,
                            font = ('Helvetica', 20, "bold"), command= lambda: self.buttonClick("."))
-        self.deciButton.grid(row=5, column=2, columnspan=2, sticky=W)
+        self.deciButton.grid(row=5, column=1, columnspan=2, sticky=W)
 
     def buttonClick(self, number):
         self.task = str(self.task) + str(number)

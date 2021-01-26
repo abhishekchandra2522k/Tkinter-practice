@@ -80,22 +80,22 @@ class Application(Frame):
         # Button for Value - Subtraction
         self.subButton = Button(self, bg = "#0277bd", bd = 12, text="-", padx=33, pady=25, 
                        font= ('Helvetica', 20, "bold"), command = lambda:self.buttonClick("-"))
-        self.subButton.grid(row=3, column=3, sticky= W)
+        self.subButton.grid(row=3, column=3, sticky= E)
 
         # Button for Value * Multiplication
         self.mulButton = Button(self, bg = "#0277bd", bd = 12, text="*", padx=33, pady=25, 
                        font= ('Helvetica', 20, "bold"), command = lambda:self.buttonClick("*"))
-        self.mulButton.grid(row=2, column=3, sticky= W)
+        self.mulButton.grid(row=2, column=3, sticky= E)
 
          # Button for Value + Addition
-        self.addButton = Button(self, bg = "#0277bd", bd = 11, text="+", padx=33, pady=25, 
-                       font= ('Helvetica', 20, "bold"), command = lambda:self.buttonClick("+"))
-        self.addButton.grid(row=4, column=3, sticky= W)
+        self.addButton = Button(self, bg = "#0277bd", bd = 12, text="+", padx=33, pady=25, 
+                       font= ('Helvetica', 15, "bold"), command = lambda:self.buttonClick("+"))
+        self.addButton.grid(row=4, column=3, sticky= E)
 
         # Button for Value / Division
         self.divButton = Button(self, bg = "#0277bd", bd = 12, text="/", padx=33, pady=25, 
                        font= ('Helvetica', 20, "bold"), command = lambda:self.buttonClick("/"))
-        self.divButton.grid(row=5, column=3, sticky= W)
+        self.divButton.grid(row=5, column=3, sticky= E)
 
         # Button for Value = Evaluate
         self.equalButton = Button(self, bg = "#f7e686", bd = 12, text="=", padx=33, pady=25, 
@@ -105,10 +105,10 @@ class Application(Frame):
         # Button for Value All Clear
         self.clearButton = Button(self, bg = "#0277bd", bd = 12, text="AC", padx=33, pady=25, 
                        font= ('Helvetica', 18, "bold"), width=27, command = self.clearDisplay)
-        self.clearButton.grid(row=1, column=0, sticky= W, columnspan=4)
+        self.clearButton.grid(row=1, column=0, sticky= (W,E), columnspan=4)
 
         # Button for Decimal
-        self.deciButton = Button(self, bg = "#0277bd", bd = 12, text=".", padx=33, pady=25,
+        self.deciButton = Button(self, bg = "#0277bd", bd = 12, text=". ", padx=33, pady=25,
                            font = ('Helvetica', 20, "bold"), command= lambda: self.buttonClick("."))
         self.deciButton.grid(row=5, column=1, columnspan=2, sticky=W)
 
